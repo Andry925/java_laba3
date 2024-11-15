@@ -85,5 +85,49 @@ public class Car implements Comparable<Car> {
         return Integer.compare(this.price, other.price);
     }
 
-   
+    /**
+     * Indicates whether some other object is "equal to" this one.
+     * Two cars are considered equal if they have the same name, manufacturer, price, maxSpeed, and yearProduced.
+     *
+     * @param obj The reference object with which to compare.
+     * @return {@code true} if this car is the same as the obj argument; {@code false} otherwise.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Car car = (Car) obj;
+        return price == car.price &&
+                maxSpeed == car.maxSpeed &&
+                yearProduced == car.yearProduced &&
+                Objects.equals(name, car.name) &&
+                Objects.equals(manufacturer, car.manufacturer);
+    }
+
+    /**
+     * Returns a hash code value for the object. This method is supported for the benefit of hash-based collections.
+     *
+     * @return A hash code value for this car, computed using its attributes.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, manufacturer, price, maxSpeed, yearProduced);
+    }
+
+    /**
+     * Returns a string representation of the car, including the name, manufacturer, price,
+     * maximum speed, and year of production.
+     *
+     * @return A string representation of the car's attributes.
+     */
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", price=" + price +
+                ", maxSpeed=" + maxSpeed +
+                ", yearProduced=" + yearProduced +
+                '}';
+    }
 }
