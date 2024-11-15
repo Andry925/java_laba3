@@ -27,5 +27,50 @@ public class Car implements Comparable<Car> {
         this.yearProduced = yearProduced;
     }
 
-   
+    /**
+     * Retrieves the name of the car.
+     *
+     * @return The name of the car.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Retrieves the manufacturer of the car.
+     *
+     * @return The manufacturer of the car.
+     */
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    /**
+     * Retrieves the price of the car.
+     *
+     * @return The price of the car in USD.
+     */
+    public int getPrice() {
+        return price;
+    }
+
+    /**
+     * Retrieves the maximum speed of the car.
+     *
+     * @return The maximum speed of the car in kilometers per hour.
+     */
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    /**
+     * Retrieves the year the car was produced.
+     *
+     * @return The year of production of the car.
+     */
+    public int getYearProduced() {
+        return yearProduced;
+    }
+
+    
 }
