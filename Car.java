@@ -72,5 +72,18 @@ public class Car implements Comparable<Car> {
         return yearProduced;
     }
 
-    
+    /**
+     * Compares this car to another car based on their price.
+     * Cars are first compared by price in ascending order.
+     *
+     * @param other The other car to compare with.
+     * @return A negative integer, zero, or a positive integer as this car is less than,
+     * equal to, or greater than the specified car.
+     */
+    @Override
+    public int compareTo(Car other) {
+        return Integer.compare(this.price, other.price);
+    }
+
+   
 }
