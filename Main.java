@@ -24,5 +24,19 @@ class Main {
         for (Car car : cars) {
             System.out.println(car);
         }
+
+        // Define a target car to search for
+        Car targetCar = new Car("Toyota", "Japan", 8000, 180, 2008);
+
+        // Find the target car in the sorted array
+        int index = Arrays.binarySearch(cars, targetCar, 
+                Comparator.comparing(Car::getPrice).thenComparing(Car::getMaxSpeed));
+
+        // Display the search result
+        if (index >= 0) {
+            System.out.println("\nCar found at index " + index + ": " + cars[index]);
+        } else {
+            System.out.println("\nCar not found in the array.");
+        }
     }
 }
